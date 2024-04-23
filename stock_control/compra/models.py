@@ -19,12 +19,12 @@ class Proveedor(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=250)
-    precio = models.IntegerField(max_length=20)
-    stock_actual = models.IntegerField(min=1, max_length=20)
-    proveedor = models.ManyToOneRel(Proveedor, on_delete=models.CASCADE)
+    precio = models.IntegerField()
+    stock_actual = models.IntegerField()
+    proveedor = models.ForeignKey('nombre.Proveedor', on_delete=models.PROTECT, null=True)
     
     class Meta:
-        ordering = ('nombre','proovedor', 'stock')
+        ordering = ('nombre',)
 
     def __str__(self):
         return f'Producto: {self.nombre}, precio: {self.precio}, stock actual: {self.stock_actual}, proveedor: {self.proveedor}'
