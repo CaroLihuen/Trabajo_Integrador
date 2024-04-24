@@ -11,7 +11,7 @@ def lista_productos(request):
     #renderiza la vista de todos los productos
     return render(request, 'productos/lista_productos.html', {'productos': productos})
 
-def detalle_productos(request, pk):
+def detalle_producto(request, pk):
     producto_detalle = get_object_or_404(Producto, pk=pk)
     # renderiza detalle de producto
     return render(request, 'productos/detalle_producto.html',{'producto_detalle':producto_detalle})

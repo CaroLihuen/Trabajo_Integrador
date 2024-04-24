@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Proveedor(models.Model):
-    nombre = models.CharField(max_length=250)
-    apellido = models.CharField(max_length=250)
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
     dni = models.CharField(max_length=8, unique=True)
     pass
     
@@ -18,10 +18,10 @@ class Proveedor(models.Model):
    
 
 class Producto(models.Model):
-    nombre = models.CharField(max_length=250)
-    precio = models.IntegerField()
+    nombre = models.CharField(max_length=100)
+    precio = models.FloatField()
     stock_actual = models.IntegerField()
-    proveedor = models.ForeignKey('nombre.Proveedor', on_delete=models.PROTECT, null=True)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.PROTECT, null=True)
     
     class Meta:
         ordering = ('nombre',)
