@@ -9,4 +9,9 @@ urlpatterns = [
     path('crear_producto/', views.crear_producto, name='crear_producto'),
     path('modificar_producto/<int:pk>/', views.modificar_producto, name='modificar_producto'),
     path('eliminar_producto/<int:pk>/', views.eliminar_producto, name='eliminar_producto'),
+    path('lista_proveedores/', views.lista_proveedores, name='lista_proveedores'),
+    path('detalle_proveedor/<int:pk>/', views.detalle_proveedor, name='detalle_proveedor'),
+    path('crear_proveedor/', views.crear_proveedor, name='crear_proveedor'),
+    path('modificar_proveedor/<int:pk>/', views.modificar_proveedor, name='modificar_proveedor'),
+    path('eliminar_proveedor/<int:pk>/', views.eliminar_proveedor, name='eliminar_proveedor'),
 ]
