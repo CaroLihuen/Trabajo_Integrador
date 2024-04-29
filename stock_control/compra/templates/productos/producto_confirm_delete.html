@@ -13,7 +13,14 @@
 
     </nav>
     <main> 
-
+        <h2>Eliminación de producto</h2>
+        <p>¿Está seguro que desea eliminar este producto: {{producto.nombre}}</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Si, Eliminar producto">
+        </form>
+        <br>
+        <a href="{% url 'compra:detalle_producto' producto.id %}">Cancelar</a>
     </main>
     <footer>
         

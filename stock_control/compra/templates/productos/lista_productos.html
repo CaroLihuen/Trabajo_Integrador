@@ -13,7 +13,20 @@
 
     </nav>
     <main> 
+      <h2>Lista de Productos</h2>
+      <div>
+        <ol>
+            {% for producto in productos %}
+                <li><a href="{% url 'compra:detalle_producto' producto.id %}">{{producto.nombre}}</a></li>
+            {% empty %}
+                <li>No existen productos</li>
+            {% endfor %}
+        </ol>
+        <hr>
+        <br>
+        <a href="{% url 'compra:crear_producto' %}">Crear Producto</a>
 
+      </div>
     </main>
     <footer>
         

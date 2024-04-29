@@ -13,7 +13,24 @@
 
     </nav>
     <main> 
-
+        <h2>Crear o modificar tarea</h2>
+       <br>
+       <form action="" method="post">
+        {% csrf_token %}
+        <label>Nombre: </label>
+        <input type="text" name="nombre" value="{% if proveedor %} {{proveedor.nombre}} {% endif %}">
+        <br>
+        <label>Apellido: </label>
+        <input type="text" name="apellido" value="{% if proveedor %} {{proveedor.apellido}} {% endif %}">
+        <br>
+        <label>Dni: </label>
+        <input type="number" name="dni" value="{% if proveedor %} {{proveedor.dni}} {% endif %}">
+        <br>
+        <input type="submit" value="Guardar">
+       </form>
+       <br>
+       <a href="{% url 'compra:lista_proveedores' %}">Volver a la lista de Proveedores</a>
+   
     </main>
     <footer>
         

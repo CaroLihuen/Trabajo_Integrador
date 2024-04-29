@@ -13,7 +13,16 @@
 
     </nav>
     <main> 
-
+        <h1>Detalle del Producto</h1>
+        <br>
+        <p><strong>Nombre: </strong> {{proveedor_detalle.nombre}}</p>
+        <p><strong>Apellido: </strong> {{proveedor_detalle.apellido}}</p>
+        <p><strong>DNI: </strong> {{proveedor_detalle.dni}}</p>
+        <hr>
+        <a href="{% url 'compra:modificar_proveedor' proveedor_detalle.id %}">Modificar</a> 
+        <a href="{% url 'compra:eliminar_proveedor' proveedor_detalle.id %}">Eliminar</a> 
+        <a href="{% url 'compra:lista_proveedores' %}">Volver a la lista de Producto</a>
+        <br>
     </main>
     <footer>
         

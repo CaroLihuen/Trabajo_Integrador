@@ -13,6 +13,18 @@
 
     </nav>
     <main> 
+        <h2>Lista de Proveedores</h2>
+      <div>
+        <ol>
+            {% for proveedor in proveedores %}
+                <li><a href="{% url 'compra:detalle_proveedor' proveedor.id %}">{{proveedor.nombre}}</a></li>
+            {% empty %}
+                <li>No existen proveedores</li>
+            {% endfor %}
+        </ol>
+        <hr>
+        <br>
+        <a href="{% url 'compra:crear_proveedor' %}">Crear Proveedor</a>
 
     </main>
     <footer>

@@ -15,15 +15,14 @@
     <main> 
         <h1>Detalle del Producto</h1>
         <br>
-        <p><strong>Nombre: </strong> {{producto_detalle.nombre }}</p>
-        <p><strong>Precio: </strong> {{ producto_detalle.precio}}</p>
-        <p><strong>Stock Actual: </strong> {{producto_detalle.stock_actual }}</p>
+        <p><strong>Nombre: </strong> {{producto_detalle.nombre}}</p>
+        <p><strong>Precio: </strong> {{producto_detalle.precio}}</p>
+        <p><strong>Stock Actual: </strong> {{producto_detalle.stock_actual}}</p>
         <hr>
-        <a href="{% url 'producto:modificar_producto' producto.id %}">Modificar</a> |
-            <a href="{% url 'producto:eliminar_producto' producto.id %}">Eliminar</a> |
-            <a href="{% url 'producto:lista_productos' %}">Volver a la lista de Producto</a>
-
-
+        <a href="{% url 'compra:modificar_producto' producto_detalle.id %}">Modificar</a> 
+        <a href="{% url 'compra:eliminar_producto' producto_detalle.id %}">Eliminar</a> 
+        <a href="{% url 'compra:lista_productos' %}">Volver a la lista de Producto</a>
+        <br>
     </main>
     <footer>
 
