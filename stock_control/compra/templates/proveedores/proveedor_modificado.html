@@ -13,18 +13,19 @@
 
     </nav>
     <main> 
-        <h2>Crear proveedor</h2>
+        <h2>Crear o modificar tarea</h2>
        <br>
        <form action="" method="post">
-        {% for field in forms %}
-       <div>
-        {{field.errors}}
-        {{field.label_tag}}
-        {{field}}
-       </div>
+        {% csrf_token %}
+        <label>Nombre: </label>
+        <input type="text" name="nombre" value="{% if proveedor %} {{proveedor.nombre}} {% endif %}">
         <br>
-        {% endfor %}
-         {% csrf_token %}
+        <label>Apellido: </label>
+        <input type="text" name="apellido" value="{% if proveedor %} {{proveedor.apellido}} {% endif %}">
+        <br>
+        <label>Dni: </label>
+        <input type="number" name="dni" value="{% if proveedor %} {{proveedor.dni}} {% endif %}">
+        <br>
         <input type="submit" value="Guardar">
        </form>
        <br>

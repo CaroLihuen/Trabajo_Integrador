@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Control</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <nav>
+
+    </nav>
+<main> 
+    <h2>Modificar producto</h2>
+    <br>
+    <form action="" method="post">
+     {% csrf_token %}
+     <label>Nombre: </label>
+     <input type="text" name="nombre" value="{% if producto %} {{producto.nombre}} {% endif %}">
+     <br>
+     <label>Precio: </label>
+     <input type="text" name="precio" value="{% if producto %} {{producto.precio}} {% endif %}">
+     <br>
+     <label>Stock: </label>
+     <input type="text" name="stock_actual" value="{% if producto %} {{producto.stock_actual}} {% endif %}">
+     <br>
+     <input type="submit" value="Guardar">
+    </form>
+    <br>
+    <a href="{% url 'compra:lista_productos' %}">Volver a la lista de Productos</a>
+</main>
+<footer>
+    
+</footer>
+</body>
+</html>

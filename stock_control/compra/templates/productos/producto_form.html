@@ -13,19 +13,18 @@
 
     </nav>
     <main> 
-       <h2>Crear o modificar producto</h2>
+       <h2>Crear producto</h2>
        <br>
        <form action="" method="post">
-        {% csrf_token %}
-        <label>Nombre: </label>
-        <input type="text" name="nombre" value="{% if producto %} {{producto.nombre}} {% endif %}">
+        {% for field in form %}
+       <div>
+        {{field.errors}}
+        {{field.label_tag}}
+        {{field}}
+       </div>
         <br>
-        <label>Precio: </label>
-        <input type="text" name="precio" value="{% if producto %} {{producto.precio}} {% endif %}">
-        <br>
-        <label>Stock: </label>
-        <input type="text" name="stock_actual" value="{% if producto %} {{producto.stock_actual}} {% endif %}">
-        <br>
+        {% endfor %}
+         {% csrf_token %}
         <input type="submit" value="Guardar">
        </form>
        <br>
