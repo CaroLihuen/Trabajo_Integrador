@@ -1,6 +1,7 @@
 from django.db import models
 
-# Create your models here.
+# Modelos
+# Modelo Proveedor.
 
 class Proveedor(models.Model):
     nombre = models.CharField(max_length=100)
@@ -14,13 +15,14 @@ class Proveedor(models.Model):
     def __str__(self):
         return f'{self.nombre} {self.apellido} - dni: {self.dni}'
 
-   
+
+# Modelo Producto.   
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.FloatField()
     stock_actual = models.IntegerField()
-    proveedor = models.ForeignKey(Proveedor, on_delete=models.PROTECT, null=True)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.PROTECT,null=True)
     
     class Meta:
         ordering = ('nombre',)

@@ -1,8 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = 'compra' #por defecto en la vista
+app_name = 'compra' 
 
+#urls del entorno de compra
 urlpatterns = [
     path('lista_productos/', views.lista_productos, name='lista_productos'),
     path('detalle_producto/<int:pk>/', views.detalle_producto, name='detalle_producto'),
