@@ -33,6 +33,7 @@ class ProveedorForm(forms.ModelForm):
        if isinstance(dni,float):
            raise ValidationError(f'La propiedad dni debe ser un número.')
        return dni
+    
 
 # Form de Producto 
 class ProductoForm(forms.ModelForm):

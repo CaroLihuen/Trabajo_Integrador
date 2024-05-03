@@ -13,7 +13,7 @@ class Proveedor(models.Model):
         ordering = ('nombre', 'apellido',)
 
     def __str__(self):
-        return f'{self.nombre} {self.apellido} - dni: {self.dni}'
+        return f'{self.nombre} {self.apellido}'
 
 
 # Modelo Producto.   

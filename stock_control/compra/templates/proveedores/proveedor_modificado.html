@@ -41,6 +41,9 @@
         <br>
         <label>Dni: </label>
         <input type="number" name="dni" value="{% if proveedor %} {{proveedor.dni}} {% endif %}">
+        <br>
+        <label>Celular: </label>
+        <input type="number" name="celular" value="{% if proveedor %} {{proveedor.celular}} {% endif %}">
         </div>
         <br>
         <input type="submit" value="Guardar"  class="form-control btn btn-outline-success mb-4">
