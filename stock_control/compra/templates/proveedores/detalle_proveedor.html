@@ -34,7 +34,6 @@
         <p><strong>Nombre: </strong> {{proveedor_detalle.nombre}}</p>
         <p><strong>Apellido: </strong> {{proveedor_detalle.apellido}}</p>
         <p><strong>DNI: </strong> {{proveedor_detalle.dni}}</p>
-        <p><strong>Celular: </strong> {{proveedor_detalle.celular}}</p>
         <hr>
         <a class="text-muted text-decoration-none" href="{% url 'compra:modificar_proveedor' proveedor_detalle.id %}">Modificar</a> 
         <a class="text-muted text-decoration-none" href="{% url 'compra:eliminar_proveedor' proveedor_detalle.id %}">Eliminar</a> 

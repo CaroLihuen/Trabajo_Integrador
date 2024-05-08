@@ -35,18 +35,23 @@ def crear_producto(request):
 
 def modificar_producto(request,pk):
     producto = get_object_or_404(Producto,pk=pk)
+    proveedores = Proveedor.objects.all()
     if (request.method == 'POST'):
         nombre = request.POST.get('nombre')
         precio = request.POST.get('precio')
         stock_actual = request.POST.get('stock_actual')
+        id_proveedor = request.POST.get('id_proveedor')
+        proveedor = get_object_or_404(Proveedor, id= id_proveedor) 
+
         producto.nombre = nombre
         producto.precio = precio
         producto.stock_actual = stock_actual
+        proveedor.proveedor = proveedor
         producto.save()
 
         return redirect(reverse('compra:lista_productos'))
     
-    return render(request, 'productos/producto_modificado.html', {'producto': producto})
+    return render(request, 'productos/producto_modificado.html', {'producto': producto ,'proveedores': proveedores})
 
 def eliminar_producto(request, pk):
     producto = get_object_or_404(Producto,pk=pk)

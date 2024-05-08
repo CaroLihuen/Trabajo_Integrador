@@ -34,17 +34,13 @@
         <div class="mb-3"> 
         <div class="row align-items ms-auto"> 
         <label>Nombre: </label>
-        <input type="text" name="nombre" value="{% if proveedor %} {{proveedor.nombre}} {% endif %}">
+        <input class="form-control" type="text" name="nombre" value="{% if proveedor %} {{proveedor.nombre}} {% endif %}">
         <br>
         <label>Apellido: </label>
-        <input type="text" name="apellido" value="{% if proveedor %} {{proveedor.apellido}} {% endif %}">
+        <input class="form-control" type="text" name="apellido" value="{% if proveedor %} {{proveedor.apellido}} {% endif %}">
         <br>
         <label>Dni: </label>
-        <input type="number" name="dni" value="{% if proveedor %} {{proveedor.dni}} {% endif %}">
-        <br>
-        <label>Celular: </label>
-        <input type="number" name="celular" value="{% if proveedor %} {{proveedor.celular}} {% endif %}">
-        </div>
+        <input class="form-control" type="number" name="dni" value="{% if proveedor %} {{proveedor.dni}} {% endif %}">
         <br>
         <input type="submit" value="Guardar"  class="form-control btn btn-outline-success mb-4">
         </div>
